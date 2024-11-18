@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Patient Dashboard</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <div class="box">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./logos/TestLogo.svg" alt="Tech.Care Logo" class="logo-img">
+            </div>
+
+            <ul class="navbar-links">
+                <li><a href="#">Overview</a></li>
+                <li><a href="#" class="active">Patients</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Message</a></li>
+                <li><a href="#">Transactions</a></li>
+            </ul>
+
+            <div class="navbar-user">
+                <img src="./logos/SeniorWoman.png" alt="Dr. Jose Simmons" class="user-img">
+                <div class="user-info">
+                    <span>Dr. Jose Simmons</span>
+                    <small>General Practitioner</small>
+                </div>
+                <span class="settings-icon">⚙️</span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-container">
+        <div class="patients-container">
+            <h2>Patients</h2>
+            <div id="patients-list" class="patients-list">
+            </div>
+        </div>
+
+        <div class="diagnosis-container">
+            <div class="diagnosis-history-container">
+                <h2>Diagnosis History</h2>
+                <div class="inner-container">
+                    <div class="blood-pressure-graph">
+                        <canvas id="bloodPressureChart"></canvas>
+                    </div>
+                    <div class="diagnosis-stats">
+                        <div>
+                            <p class="systolic-label">Systolic</p>
+                            <h3 id="systolic-value"></h3>
+                            <p id="systolic-level"></p>
+                        </div>
+                        <div>
+                            <p class="diastolic-label">Diastolic</p>
+                            <h3 id="diastolic-value"></h3>
+                            <p id="diastolic-level"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="vital-cards">
+                    <div class="card respiratory-rate">
+                        <div class="icon">🫁</div>
+                        <p>Respiratory Rate</p>
+                        <h3 class="rep-rate"></h3>
+                        <p class="respiratory-status"></p>
+                    </div>
+                    <div class="card temperature">
+                        <div class="icon">🌡️</div>
+                        <p>Temperature</p>
+                        <h3 class="temp-rate"></h3>
+                        <p class="temperature-status"></p>
+                    </div>
+                    <div class="card heart-rate">
+                        <div class="icon">❤️</div>
+                        <p>Heart Rate</p>
+                        <h3 class="h-rate"></h3>
+                        <p class="heart-rate-status"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagnostic-lab-container">
+                <div class="diagnostic-list">
+                    <h2>Diagnostic List</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problem/Diagnosis</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="diagnostic-list-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="patient-container">
+            <div class="patient-details-container">
+                <div class="patient-profile">
+                    <img src="" class="profile-img" alt="Patient Profile Picture">
+                    <h2 id="patient-name"></h2> 
+                </div>
+                <ul class="patient-info">
+                    <li class="patient-info-row">
+                        <span class="icon">&#128197;</span>
+                        <div class="info-text">
+                            <strong>Date Of Birth</strong>
+                            <span id="dob"></span> 
+                        </div>
+                    </li>
+                    <li class="patient-info-row">
+                        <span class="icon">&#9892;</span>
+                        <div class="info-text">
+                            <strong>Gender</strong>
+                            <span id="gender"></span>
+                        </div>
+                    </li>
+                    <li class="patient-info-row">
+                        <span class="icon">&#128222;</span>
+                        <div class="info-text">
+                            <strong>Contact Info</strong>
+                            <span id="contact-info"></span> 
+                        </div>
+                    </li>
+                    <li class="patient-info-row">
+                        <span class="icon">&#128222;</span>
+                        <div class="info-text">
+                            <strong>Emergency Contacts</strong>
+                            <span id="emergency-contacts"></span> 
+                        </div>
+                    </li>
+                    <li class="patient-info-row">
+                        <span class="icon">&#128274;</span>
+                        <div class="info-text">
+                            <strong>Insurance Provider</strong>
+                            <span id="insurance-provider"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lab-results">
+                <h2>Lab Results</h2>
+                <ul id="lab-results-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
